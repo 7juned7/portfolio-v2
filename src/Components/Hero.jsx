@@ -70,13 +70,26 @@ const Hero = () => {
                             right: `${Math.max(20 - scrollPosition / 10, 0)}px`,
                         }}
                     >
-                        <div className="w-[30px] flex flex-col gap-4 ">
+                        <ul className="flex flex-col gap-3">
                             {socialLinks.map((link) => (
-                                <a key={link.id} href={link.href}>
-                                    <img className="hover:scale-[1.1]" src={link.src} alt={link.alt} />
-                                </a>
+                                <li className="w-[30px]" key={link.id}>
+                                    <a
+                                        href={link.href}
+                                        aria-label={`Follow me on ${link.alt}`} // Added aria-label for screen readers
+                                        target="_blank" // Ensure the link opens in a new tab
+                                        rel="noopener noreferrer" // Prevent security risks for external links
+                                    >
+                                        <img
+                                            className="w-full hover:scale-[1.1]"
+                                            src={link.src}
+                                            alt={link.alt}
+                                            role="img" // Helps with screen readers to know it's an image
+                                        />
+                                    </a>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
+
                     </div>
                 </div>
             </div>

@@ -16,12 +16,18 @@ const Navbar = () => {
 
                 <ul className='flex gap-3' >
 
-                    <a href='https://wa.me/+918376962083' className='w-[30px]'>
+                    <a href='https://wa.me/+918376962083' className='w-[30px]'
+                        aria-label='Contact via WhatsApp'
+                        role='link'>
 
-                        <img classname="w-full" src={whatsapp} alt="whatsapp logo" />
+                        <img classname="w-full" src={whatsapp} alt="whatsapp logo"
+                        />
                     </a>
 
-                    <a href='tel:+918376962083' className='w-[30px]'>
+                    <a href='tel:+918376962083' className='w-[30px]
+                    '
+                        aria-label='Call via Phone'
+                        role='link'>
 
                         <img className='w-full' src={phone} alt="phone logo" />
                     </a>
