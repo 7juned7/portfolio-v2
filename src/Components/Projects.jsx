@@ -1,6 +1,6 @@
 import React from 'react'
 import project1 from "../assets/video/Where in the World.mp4"
-import project2 from "../assets/video/registerKaro.mp4"
+import project2 from "../assets/video/registerkaro.mp4"
 import project3 from "../assets/video/teach easy.mp4"
 import project4 from "../assets/video/React App (2).mp4"
 import project5 from "../assets/video/React App (3).mp4"
