@@ -73,6 +73,7 @@ const Projects = () => {
                             <video
                                 autoPlay
                                 loop
+                                muted
                                 className="w-full rounded-lg mb-3"
                             >
                                 <source src={project.video} type="video/mp4" />

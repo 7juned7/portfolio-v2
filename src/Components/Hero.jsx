@@ -20,6 +20,15 @@ const Hero = () => {
     const handleAboutme = () => {
         setFlag((prev) => !prev);
     };
+    const skills = [
+        { id: 1, name: "React", color: "text-blue-500" },
+        { id: 2, name: "CSS", color: "text-blue-600" },
+        { id: 3, name: "Tailwind CSS", color: "text-sky-400" },
+        { id: 4, name: "MongoDB", color: "text-green-600" },
+        { id: 5, name: "Express", color: "text-black" },
+        { id: 6, name: "Node.js", color: "text-green-500" },
+        { id: 7, name: "JavaScript", color: "text-yellow-500" },
+    ];
 
     const socialLinks = [
         { id: 1, href: "https://www.instagram.com/webjuncture/", src: insta, alt: "Instagram" },
@@ -52,27 +61,27 @@ const Hero = () => {
                 )
             }
 
-            <div className=" relative w-full max-w-[1800px] bg-black h-[85vh] flex justify-between sm:px-15 md:px-25 px-4 items-center">
+            <div className="relative w-full max-w-[1800px] bg-black h-[85vh] flex justify-between sm:px-15 md:px-25 px-4 items-center">
                 <div className="flex flex-col gap-6">
-                    <h1 className="text-8xl text-white">Juned</h1>
-                    <h1 className="text-4xl text-white">Full Stack Developer</h1>
+                    <h1 className="text-8xl z-20 pointer-events-auto text-white">Juned</h1>
+                    <h1 className="text-4xl z-20 text-white">Full Stack Developer</h1>
                     <button
                         onClick={handleAboutme}
-                        className="text-white text-2xl w-fit mt-10 bg-[#1771a5] px-6 py-2"
+                        className="text-white cursor-pointer z-20 text-2xl w-fit mt-10 bg-[#1771a5] px-6 py-2"
                     >
                         About Me
                     </button>
                 </div>
-                <div className="p-2">
+                <div className="p-2 z-20 ">
                     <div
-                        className="p-2 bg-black  rounded-l-2xl fixed  transform -translate-y-1/2 z-[1]"
+                        className="p-2  bg-black  rounded-l-2xl fixed  transform -translate-y-1/2 z-[1]"
                         style={{
                             right: `${Math.max(20 - scrollPosition / 10, 0)}px`,
                         }}
                     >
                         <ul className="flex flex-col gap-3">
                             {socialLinks.map((link) => (
-                                <li className="w-[30px]" key={link.id}>
+                                <li className="w-[30px] z-20" key={link.id}>
                                     <a
                                         href={link.href}
                                         aria-label={`Follow me on ${link.alt}`} // Added aria-label for screen readers
@@ -94,7 +103,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <AnimatePresence>
+            <AnimatePresence >
 
                 {flag && (
                     <>
@@ -111,7 +120,7 @@ const Hero = () => {
                             <div className="absolute right-5 top-5 cursor-pointer" onClick={handleAboutme}>
                                 <img src={cross} alt="close" />
                             </div>
-                            <div className="flex flex-col gap-6">
+                            <div className="flex flex-col gap-4">
                                 <h2>
                                     <div className="text-[#1771a5] text-2xl mb-4">ABOUT ME</div>
                                 </h2>
@@ -121,6 +130,13 @@ const Hero = () => {
                                     user-friendly websites that align with their vision. My focus is on crafting engaging
                                     digital experiences that captivate visitors and keep them hooked.
                                 </p>
+                                <div className="flex flex-wrap ">
+                                    {skills.map(skill => (
+                                        <div key={skill.id} className="flex flex-col items-center text-center">
+                                            <div className={`${skill.color}`}>{skill.name}</div>
+                                        </div>
+                                    ))}
+                                </div>
                                 <div className="flex gap-4 w-fit ml-[-10px]">
                                     {[{ img: mongodb, letter: "M" }, { img: express, letter: "E" }, { img: react, letter: "R" }, { img: node, letter: "N" }].map((tech, index) => (
                                         <div key={index} className="flex flex-col justify-center items-center gap-2">
